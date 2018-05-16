@@ -1,3 +1,5 @@
+.env #Never allow this
+*.env # Because its the right thing.
 
 # Created by https://www.gitignore.io/api/webstorm,notepadpp,sublimetext,visualstudio,visualstudiocode
 
