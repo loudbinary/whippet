@@ -16,8 +16,11 @@ module.exports = {
     getEnvironmentInfo: function getEnvironmentInfo(cb){
         binance.exchangeInfo((error,data)=>{
             let envs = environment(data)
-            envs.save((err)=>{
+            envs.symbols.push(data.symbols)
+            envs.symbols.save()
+            envs.save((err,data)=>{
                 console.log(err);
+                console.log(data);
             });
             cb(data);
         })
